@@ -22,3 +22,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Service\OrderCollector:
+        arguments:
+            $orderTotalCalculator: '@App\Service\OrderTotalCalculator'
+            $vatCalculator: '@App\Service\VatCalculator'
+            $combinedTotalCalculator: '@App\Service\CombinedTotalCalculator'
+
+    App\Service\OrderTotalCalculator: ~
+    App\Service\VatCalculator: ~
+    App\Service\CombinedTotalCalculator: ~
+
+    app.event_listener.add_custom_header:
+        class: App\EventListener\AddCustomHeaderListener
+        tags:
+            - { name: 'kernel.event_listener', event: 'kernel.response', method: 'onKernelResponse' }
+
