@@ -1,5 +1,9 @@
+# dualmedia
+
 Dodawanie produktów
+
 Przykładowy request do dodania produktu
+
 POST ROUTE: http://localhost/ware/new
 
 {
@@ -12,7 +16,8 @@ POST ROUTE: http://localhost/ware/new
 }
 
 
-Przykładowy request do utworzenia zamówienia, wcześniej należy dodać przedmioty do bazy.
+Przykładowy request do utworzenia zamówienia,
+wcześniej należy dodać przedmioty do bazy.
 
 POST ROUTE: http://localhost/order/create
 
@@ -31,4 +36,3 @@ POST ROUTE: http://localhost/order/create
 }
 
 GET ROUTE: http://localhost/order/serach/{id_zamówienia}
-# dualmedia
